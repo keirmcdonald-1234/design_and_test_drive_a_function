@@ -36,47 +36,22 @@ _Make a list of examples of what the function will take and return._
 # EXAMPLE
 
 """
-Given a lower and an uppercase word
-It returns a list with the uppercase word
-"""
-extract_uppercase("hello WORLD") => ["WORLD"]
+If the string contains #TODO will return True
 
 """
-Given two uppercase words
-It returns a list with both words
-"""
-extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
+to_do_finder("#TODO buy milk") => True
 
 """
-Given two lowercase words
-It returns an empty list
-"""
-extract_uppercase("hello world") => []
+If the string does not contain #TODO then will return False
 
 """
-Given a lower and a mixed case word
-It returns an empty list
-"""
-extract_uppercase("hello WoRLD") => []
+to_do_finder("drink tea")
 
 """
-Given a lowercase word and an uppercase word with an exclamation mark
-It returns a list with the uppercase word, no exclamation mark
-"""
-extract_uppercase("hello WORLD!") => ["WORLD"]
+If the string contains TODO (no #) will return False
 
 """
-Given an empty string
-It returns an empty list
-"""
-extract_uppercase("") => []
-
-"""
-Given a None value
-It throws an error
-"""
-extract_uppercase(None) throws an error
-```
+to_do_finder("TODO buy crisps") => False
 
 _Encode each example as a test. You can add to the above list as you go._
 
