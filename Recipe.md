@@ -4,42 +4,23 @@ Copy this into a `recipe.md` in your project and fill it out.
 
 ## 1. Describe the Problem
 
-As an admin
-So that I can determine whether a user is old enough
-I want to allow them to enter their date of birth as a string in the format `YYYY-MM-DD`.
-
-As an admin
-So that under-age users can be denied entry
-I want to send a message to any user under the age of 16 saying their access is denied
-And telling them their current age and the required age (16).
-
-As an admin
-So that old enough users can be granted access
-I want to send a message to any user aged 16 or older to say that access has been granted.
-
+To find a task among all my notes. To do this I will need to check if the line contains the string #TODO
 
 ## 2. Design the Function Signature
 
 _Include the name of the function, its parameters, return value, and side effects._
 
 ```python
-
-de
-
 # EXAMPLE
 
-
-def age_checker(date_of_birth):
+def to_do_finder(my_notes):
     """
-    Checks if user is under or over 16 and return string to say access is denied or granted 
 
     Parameters: (list all parameters and their types)
-        date_of_birth, string in format 'YYYY-MM-DD'
+       list of strings
 
     Returns: (state the return value and its type)
-        returns string:
-        if under 16 returns - access denied, current age and the required age
-        if over 16 returns - access granted
+        True or False
 
     Side effects: (state any side effects)
         This function doesn't print anything or have any other side-effects
@@ -55,32 +36,49 @@ _Make a list of examples of what the function will take and return._
 # EXAMPLE
 
 """
-date of birth = 16 and over 
-returns access granted
+Given a lower and an uppercase word
+It returns a list with the uppercase word
 """
-age_checker("2009-04-03") => "access granted"
+extract_uppercase("hello WORLD") => ["WORLD"]
 
 """
-date of birth = under 16 
-returns access denied
+Given two uppercase words
+It returns a list with both words
 """
-age_checker("2011-04-03") => "current age 14, required age 16, access denied"
-
-"""
-date format incorrect 
-
-returns - error
-"""
-age_checker("03-04-11") = "throws error"
+extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
 
 """
-date not a string 
-
-returns - error
+Given two lowercase words
+It returns an empty list
 """
-age_checker(03-04-11) = "throws error"
+extract_uppercase("hello world") => []
 
+"""
+Given a lower and a mixed case word
+It returns an empty list
+"""
+extract_uppercase("hello WoRLD") => []
 
+"""
+Given a lowercase word and an uppercase word with an exclamation mark
+It returns a list with the uppercase word, no exclamation mark
+"""
+extract_uppercase("hello WORLD!") => ["WORLD"]
+
+"""
+Given an empty string
+It returns an empty list
+"""
+extract_uppercase("") => []
+
+"""
+Given a None value
+It throws an error
+"""
+extract_uppercase(None) throws an error
+```
+
+_Encode each example as a test. You can add to the above list as you go._
 
 ## 4. Implement the Behaviour
 
